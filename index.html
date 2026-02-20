@@ -170,11 +170,23 @@
             text-decoration: underline;
         }
 
+        .app-preview-img {
+            margin: 2.5rem -3rem 0;
+            width: calc(100% + 6rem);
+            max-width: calc(100% + 6rem);
+            border-radius: 12px;
+        }
+
         @media (max-width: 480px) {
             h1 { font-size: 1.75rem; }
             p { font-size: 1rem; }
             .features { gap: 1.25rem; }
             .feature-value { font-size: 1.25rem; }
+            .app-preview-img {
+                margin: 2rem -1rem 0;
+                width: calc(100% + 2rem);
+                max-width: calc(100% + 2rem);
+            }
         }
     </style>
 </head>
@@ -191,6 +203,8 @@
         <a href="https://apps.apple.com/dk/app/kørapp/id6758728183" class="app-store-link" aria-label="Download KørApp on the App Store">
             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
         </a>
+
+        <img src="https://korapp-website.vercel.app/images/app-preview.jpg" alt="KørApp screenshots - questions, progress tracking, realistic tests" class="app-preview-img" loading="lazy">
 
         <div class="features">
             <div class="feature">
