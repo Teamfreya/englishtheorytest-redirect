@@ -94,8 +94,41 @@ a:hover { text-decoration: underline; }
 .hero {
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
     color: white;
-    padding: 5rem 1.5rem 4rem;
-    text-align: center;
+    padding: 4rem 1.5rem 0;
+    overflow: hidden;
+}
+
+.hero-split {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-phone {
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+.phone-mockup {
+    width: 280px;
+    border-radius: 36px 36px 0 0;
+    overflow: hidden;
+    box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.3);
+    border: 6px solid rgba(255, 255, 255, 0.15);
+    border-bottom: none;
+    background: #000;
+}
+
+.phone-mockup img {
+    width: 100%;
+    display: block;
 }
 
 .hero-inner {
@@ -531,12 +564,146 @@ a:hover { text-decoration: underline; }
     line-height: 1.5;
 }
 
+/* === App Showcase === */
+.app-showcase {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+    border-radius: 16px;
+    border: 1px solid #bfdbfe;
+}
+
+.app-showcase-text {
+    flex: 1;
+}
+
+.app-showcase-text h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem;
+}
+
+.app-showcase-text p {
+    color: #475569;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.app-showcase-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.app-showcase-image img {
+    width: 100%;
+    display: block;
+}
+
+.inline-cta {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.inline-cta:hover {
+    background: #1d4ed8;
+    text-decoration: none;
+    transform: translateY(-1px);
+    color: white;
+}
+
+.inline-cta-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.inline-cta-box p {
+    color: #166534;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+}
+
+.inline-cta-box strong {
+    color: #14532d;
+}
+
+.app-cta-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.app-cta-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.app-cta-banner h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem;
+}
+
+.app-cta-banner p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
+    .hero { padding: 3rem 1.5rem 0; }
     .hero h1 { font-size: 2.25rem; }
     .hero .subtitle { font-size: 1.0625rem; }
     .article-header h1 { font-size: 1.875rem; }
     .hero-stats { gap: 1.5rem; }
+
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-text { text-align: center; }
+
+    .hero-phone {
+        width: 220px;
+        margin: 0 auto;
+    }
+
+    .phone-mockup { width: 100%; border-radius: 30px 30px 0 0; border-width: 5px; }
+
+    .app-showcase {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .app-cta-banner-inner {
+        flex-direction: column;
+        text-align: center;
+    }
 
     .nav-links { display: none; }
     .nav-toggle { display: block; }
@@ -572,7 +739,8 @@ a:hover { text-decoration: underline; }
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 1.875rem; }
-    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .hero { padding: 2.5rem 1.25rem 0; }
     .container, .container-wide { padding: 2rem 1.25rem; }
     .feature-grid { grid-template-columns: 1fr; }
+    .hero-phone { width: 200px; }
 }
